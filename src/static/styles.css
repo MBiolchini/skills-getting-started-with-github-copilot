@@ -149,6 +149,13 @@ info {
   display: none;
 }
 
+.highlight {
+  background-color: #fff9c4;
+  border: 1px solid #fbc02d;
+  border-radius: 5px;
+  padding: 10px;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
