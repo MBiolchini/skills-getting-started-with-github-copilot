@@ -10,11 +10,20 @@ async function fetchActivities() {
         const activityItem = document.createElement('div');
         activityItem.className = 'activity-item';
 
+        // Create participants list
+        const participantsList = details.participants.map(participant => `<li>${participant}</li>`).join('');
+
         activityItem.innerHTML = `
             <h3>${name}</h3>
             <p>${details.description}</p>
             <p><strong>Schedule:</strong> ${details.schedule}</p>
             <p><strong>Participants:</strong> ${details.participants.length}/${details.max_participants}</p>
+            <div class="participants-section">
+                <strong>Signed-up Participants:</strong>
+                <ul class="participants-list">
+                    ${participantsList || '<li>No participants yet</li>'}
+                </ul>
+            </div>
             <button onclick="signup('${name}')">Sign Up</button>
         `;
 
